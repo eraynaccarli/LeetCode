@@ -1,0 +1,13 @@
+public int missingNumber(int[] nums){
+  int sum = 0;
+  int n = nums.length;
+  
+  for(int num : nums){
+    sum += num;
+   }
+   return (n * (n + 1)) / 2 - sum;
+}
+
+// sirali sayilardan olusmus bir dizideki eksik sayiyi bulma
+// (n * (n+1)) / 2    sıfırdan n e kadar giden sayilarin toplamini bulan formül
+// soruda n e kadar maximum toplamı bulup toplam sayıyı ondan cikarirsak eksik olani bulmus oluruz
