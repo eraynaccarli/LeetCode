@@ -1,19 +1,19 @@
- 
+ # uzunlukları dizideki sayılar olan çubukların arasındaki en fazla suyu alabilecek max mesafeyi istiyor bunun için hem en uzun hemde arasındaki mesafe en uzak sayıyı bulacağız kısa olan sayı ile mesafeyi çarpacağız.
     public int maxArea(int[] height) {
         int maximumArea = 0;
         int left = 0; // sol çubuk
-        int right = height.length-1; // sağ çubuk array uzunluğunun bir eksiği olur array 0 dan başladığı için
-        int shorterLine = 0;  // kısa olan çubuk
+        int right = height.length-1; // sağdaki sayı array uzunluğunun bir eksiği olur array 0 dan başladığı için
+        int shorterLine = 0;  // kısa olan sayı
         int distance = 0; // mesafe
 
-        while(left < right){ // sağ çubuk daha büyük olduğu müddetçe devam etsin
+        while(left < right){ // sağ sayı daha büyük olduğu müddetçe devam etsin
             shorterLine = Math.min(height[left], height[right]);  // iki çubuk arasından en kısasını bulduk (sol ve sağ indekse baktık)
             distance = right- left; // mesafe bulduk
             maximumArea = Math.max(maximumArea, shorterLine * distance); // maximum alanı bulduk 
-            if(height[left] < height[right]){ // sağ daki çubuk daha büyükse soldaki kısayı arttır
+            if(height[left] < height[right]){ // sağ daki sayı daha büyükse soldaki kısayı arttır
                 left++;
             }
-            else{ // biz kısa çubuksak bizi düşür
+            else{ // biz kısa sayıysak bizi düşür
                 right--;
             }
         }
