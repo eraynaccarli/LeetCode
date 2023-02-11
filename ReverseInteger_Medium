@@ -5,7 +5,7 @@
            lastDigit = x % 10;  // sayının 10 bölümünden kalan ile son basamağını aldık // 3 
            reversed = reversed * 10 + lastDigit; // son basamağını 10 ile çarptık 30 yapıp sonraki basamaktan 2 gelince 32 en son bir gelince 321 olması için yani 10 ile çarparak bir basamak kaydırıyoruz
            x /=  10; // x i 10 a böldük burası 12 oldu sonra yukarı bir daha çıktı 12 yi 10 a böldük  lastDigit = 2 oldu reversed e 2 eklendi 32 oldu
-           if(reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE){
+           if(reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE){ // girilen parametredeki sayı Integer ın alabileceği değerlerden fazla ize 0 dön dedik
                return 0;
            }
        } 
