@@ -1,0 +1,19 @@
+# dizide en çok tekrar eden veriyi bul
+
+ public int majorityElement(int[] nums) {
+        Map<Integer, Integer> myMap = new HashMap<Integer,Integer>(); // HashMap oluşturduk
+        int ret = 0;     // tekrar eden sayı
+        for(int num : nums){  
+           if(!myMap.containsKey(num)){ // dizideki değer hashmap de yoksa num a 1 i atadık 
+                 myMap.put(num, 1);
+           } 
+           else{
+               myMap.put(num, myMap.get(num) + 1); // eğer var ise dizide , numarayı bir attırdık
+           }
+           if(myMap.get(num) > nums.length / 2){ // hashmapin içindeki değer dizinin en çok tekrar edeninden büyükse  onu en çok tekrar edene atadık
+               ret = num;
+               break;
+           }
+        }
+        return ret;
+    }
